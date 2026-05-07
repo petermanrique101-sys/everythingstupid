@@ -3,288 +3,351 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Everything Stupid â€” a website for dumb shit</title>
-<meta name="description" content="A home for dumb thoughts, bad ideas, and things that didn't deserve to be on the internet but are now." />
+<title>Everything Stupid — the internet's dumbest greatest hits</title>
+<meta name="description" content="A daily drop of the dumbest, funniest, most unhinged stuff on the internet. One email. Zero shame." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤡</text></svg>" />
 <style>
-  :root {
-    --bg: #0a0a0a;
-    --fg: #f5f5f1;
-    --accent: #ffea00;
-    --accent2: #ff2bd6;
-    --muted: #888;
+  :root{
+    --bg:#fffaf2;
+    --ink:#161616;
+    --muted:#5a5a5a;
+    --accent:#ff3d3d;
+    --accent-2:#ffd23d;
+    --accent-3:#3d8bff;
+    --card:#ffffff;
+    --line:#1610;
+    --shadow: 0 12px 40px -12px rgba(0,0,0,.18);
+    --radius: 18px;
+    --maxw: 1100px;
   }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); }
-  body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    line-height: 1.4;
-    overflow-x: hidden;
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
   }
-  .marquee {
-    background: var(--accent);
-    color: #000;
-    font-weight: 900;
-    text-transform: uppercase;
-    white-space: nowrap;
-    overflow: hidden;
-    padding: 8px 0;
-    border-bottom: 4px solid #000;
-    letter-spacing: 0.05em;
+  a{color:inherit}
+  img{max-width:100%;display:block}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  /* NAV */
+  nav.top{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 22px;max-width:var(--maxw);margin:0 auto;
   }
-  .marquee-track {
-    display: inline-block;
-    padding-left: 100%;
+  .brand{
+    font-weight:900;font-size:20px;letter-spacing:-.01em;
+    display:flex;align-items:center;gap:8px;
+  }
+  .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px #ff3d3d22}
+  .nav-cta{
+    background:var(--ink);color:#fff;border:0;border-radius:999px;
+    padding:10px 16px;font-weight:700;font-size:14px;cursor:pointer;
+    text-decoration:none;
+  }
+
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:60px 22px 80px;
+    overflow:hidden;
+  }
+  .hero-inner{
+    max-width:var(--maxw);margin:0 auto;
+    display:grid;grid-template-columns: 1.15fr .85fr;gap:50px;align-items:center;
+  }
+  .eyebrow{
+    display:inline-block;font-weight:700;font-size:13px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);
+    background:#ff3d3d12;padding:6px 12px;border-radius:999px;margin-bottom:20px;
+  }
+  h1.head{
+    font-size: clamp(44px, 7vw, 92px);
+    line-height:.95;letter-spacing:-.03em;margin:0 0 22px;
+    font-weight:900;
+  }
+  h1.head em{font-style:normal;background:linear-gradient(105deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:54ch;margin:0 0 28px}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{
+    border:0;cursor:pointer;font-weight:800;font-size:16px;
+    padding:16px 22px;border-radius:14px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+    transition:transform .15s ease, box-shadow .2s ease;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn.primary{background:var(--ink);color:#fff;box-shadow:var(--shadow)}
+  .btn.ghost{background:transparent;color:var(--ink);border:2px solid #16161620}
+  .micro{font-size:13px;color:var(--muted);margin-top:14px}
+  .micro b{color:var(--ink)}
+
+  /* HERO ART (CSS only — no images required) */
+  .stage{
+    position:relative;height:460px;border-radius:24px;
+    background:
+      radial-gradient(120% 80% at 90% 0%, #ffd23d33, transparent 60%),
+      radial-gradient(120% 80% at 0% 100%, #3d8bff22, transparent 60%),
+      linear-gradient(180deg,#fff,#fff7e8);
+    border:1px solid #16161614;
+    overflow:hidden;box-shadow:var(--shadow);
+  }
+  .blob{position:absolute;border-radius:30px;display:grid;place-items:center;font-size:42px;
+    box-shadow:var(--shadow);background:#fff;border:1px solid #16161610;}
+  .b1{top:34px;left:34px;width:118px;height:118px;background:var(--accent);color:#fff;transform:rotate(-8deg)}
+  .b2{top:60px;right:38px;width:140px;height:140px;background:var(--accent-2);transform:rotate(7deg)}
+  .b3{bottom:46px;left:60px;width:140px;height:140px;background:var(--accent-3);color:#fff;transform:rotate(5deg)}
+  .b4{bottom:70px;right:48px;width:120px;height:120px;background:#161616;color:#ffd23d;transform:rotate(-6deg)}
+  .center-card{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-2deg);
+    background:#fff;border-radius:18px;padding:18px 22px;border:1px solid #16161614;
+    box-shadow:var(--shadow);min-width:230px;text-align:center;
+  }
+  .center-card .ttl{font-weight:900;font-size:18px}
+  .center-card .meta{font-size:12px;color:var(--muted);margin-top:4px}
+  .stamp{
+    position:absolute;bottom:18px;left:50%;transform:translateX(-50%) rotate(-3deg);
+    font-weight:900;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent);border:2px dashed var(--accent);padding:6px 10px;border-radius:8px;background:#fff;
+  }
+
+  /* MARQUEE */
+  .marquee{
+    margin-top:30px;border-top:1px solid #16161614;border-bottom:1px solid #16161614;
+    background:#fff;
+    overflow:hidden;white-space:nowrap;
+  }
+  .marquee-track{
+    display:inline-flex;gap:50px;padding:14px 0;
     animation: scroll 28s linear infinite;
+    font-weight:800;font-size:15px;color:#161616;
   }
-  @keyframes scroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-100%); }
+  .marquee-track span{display:inline-flex;align-items:center;gap:10px}
+  .marquee-track .pip{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* SECTIONS */
+  section{padding:80px 22px}
+  .kicker{font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.02em;margin:0 0 14px;font-weight:900}
+  .lede{color:var(--muted);max-width:62ch;margin:0 0 36px;font-size:17px}
+
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{
+    background:var(--card);border-radius:var(--radius);padding:22px;
+    border:1px solid #16161610;box-shadow:0 6px 24px -16px rgba(0,0,0,.18);
+    display:flex;flex-direction:column;gap:10px;min-height:200px;
+    transition:transform .15s ease;
   }
-  header {
-    padding: 80px 24px 40px;
-    text-align: center;
-    border-bottom: 2px dashed #333;
+  .card:hover{transform:translateY(-3px)}
+  .card .icon{font-size:34px}
+  .card h3{margin:0;font-size:20px;font-weight:900;letter-spacing:-.01em}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+  .card .tag{
+    margin-top:auto;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;background:var(--ink);padding:5px 9px;border-radius:999px;align-self:flex-start;
   }
-  h1 {
-    font-size: clamp(54px, 12vw, 180px);
-    margin: 0;
-    line-height: 0.9;
-    font-weight: 900;
-    letter-spacing: -0.04em;
-    text-transform: uppercase;
+
+  /* SAMPLE STRIP */
+  .strip{
+    background:#161616;color:#fff;border-radius:24px;padding:42px;display:grid;
+    grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;
+    box-shadow:var(--shadow);
   }
-  h1 .red { color: var(--accent2); }
-  .tagline {
-    margin-top: 24px;
-    font-size: clamp(16px, 2vw, 22px);
-    color: var(--muted);
-    max-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
+  .strip h2{color:#fff}
+  .strip p{color:#ffffffb0}
+  .quote{
+    background:#262626;border-radius:18px;padding:22px;border:1px dashed #ffffff30;
+    font-size:18px;line-height:1.45;
   }
-  main {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 60px 24px;
+  .quote .who{margin-top:10px;font-size:13px;color:#ffffff80;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+
+  /* SIGNUP */
+  .signup{
+    background:linear-gradient(135deg,#ffd23d22,#ff3d3d18);
+    border-radius:24px;padding:46px;
+    border:1px solid #16161610;
+    text-align:center;
   }
-  .card {
-    background: #111;
-    border: 2px solid #1f1f1f;
-    border-radius: 18px;
-    padding: 36px;
-    margin-bottom: 28px;
-    transition: transform 0.15s ease, border-color 0.15s ease;
+  .form{
+    display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px auto 0;max-width:520px;
   }
-  .card:hover { transform: translateY(-2px); border-color: var(--accent); }
-  .card h2 {
-    margin: 0 0 12px;
-    font-size: 28px;
-    font-weight: 900;
-    text-transform: uppercase;
+  .form input{
+    flex:1;min-width:240px;padding:16px 18px;border-radius:12px;border:2px solid #16161618;
+    font-size:16px;background:#fff;color:var(--ink);
   }
-  .stupid-thought {
-    font-size: clamp(22px, 3vw, 36px);
-    font-weight: 700;
-    line-height: 1.25;
-    min-height: 120px;
-    display: flex;
-    align-items: center;
-    color: var(--accent);
+  .form input:focus{outline:none;border-color:var(--ink)}
+  .form button{
+    background:var(--accent);color:#fff;border:0;padding:16px 22px;border-radius:12px;
+    font-weight:800;font-size:16px;cursor:pointer;
   }
-  button {
-    background: var(--accent2);
-    color: #000;
-    border: none;
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 16px;
-    padding: 14px 24px;
-    border-radius: 999px;
-    cursor: pointer;
-    letter-spacing: 0.05em;
-    transition: transform 0.1s ease;
+  .form button:hover{background:#e62f2f}
+  .legal{font-size:12px;color:var(--muted);margin-top:12px}
+
+  /* FOOTER */
+  footer{padding:36px 22px 60px;color:var(--muted);font-size:14px;text-align:center}
+  footer .row{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:8px}
+  footer a{text-decoration:none;color:var(--muted)}
+  footer a:hover{color:var(--ink)}
+
+  /* MOBILE */
+  @media (max-width: 860px){
+    .hero-inner{grid-template-columns:1fr;gap:36px}
+    .stage{height:340px}
+    .b1{width:90px;height:90px;font-size:32px}
+    .b2{width:108px;height:108px;font-size:34px}
+    .b3{width:108px;height:108px;font-size:34px}
+    .b4{width:92px;height:92px;font-size:32px}
+    .grid-3{grid-template-columns:1fr 1fr}
+    .strip{grid-template-columns:1fr;padding:28px}
+    section{padding:56px 22px}
   }
-  button:hover { transform: scale(1.03); }
-  button:active { transform: scale(0.97); }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-    margin-top: 20px;
+  @media (max-width: 520px){
+    .grid-3{grid-template-columns:1fr}
+    .stage{height:300px}
   }
-  .tile {
-    background: #1a1a1a;
-    padding: 24px;
-    border-radius: 14px;
-    border: 1px solid #2a2a2a;
-    text-align: center;
-  }
-  .tile .num {
-    font-size: 42px;
-    font-weight: 900;
-    color: var(--accent);
-    display: block;
-  }
-  .tile .label {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    margin-top: 6px;
-  }
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  textarea, input {
-    background: #0a0a0a;
-    color: var(--fg);
-    border: 2px solid #333;
-    border-radius: 10px;
-    padding: 14px;
-    font-size: 16px;
-    font-family: inherit;
-    resize: vertical;
-  }
-  textarea:focus, input:focus { outline: none; border-color: var(--accent); }
-  .submissions {
-    margin-top: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .submission {
-    background: #161616;
-    padding: 16px 20px;
-    border-radius: 10px;
-    border-left: 4px solid var(--accent2);
-    font-size: 17px;
-  }
-  footer {
-    text-align: center;
-    padding: 60px 24px 40px;
-    color: var(--muted);
-    font-size: 14px;
-    border-top: 2px dashed #333;
-  }
-  footer a { color: var(--accent); }
 </style>
 </head>
 <body>
 
-<div class="marquee">
+<nav class="top">
+  <div class="brand"><span class="dot"></span> everything<span style="color:var(--accent)">stupid</span></div>
+  <a class="nav-cta" href="#join">Join the list</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow">🤡 Daily nonsense, curated</span>
+      <h1 class="head">The dumbest stuff on the internet, <em>delivered daily.</em></h1>
+      <p class="sub">One short email a day. Five unhinged links, one cursed image, zero think-pieces. We do the doomscrolling so you can pretend you're being productive.</p>
+      <div class="cta-row">
+        <a href="#join" class="btn primary">Get the daily drop →</a>
+        <a href="#what" class="btn ghost">What's in it?</a>
+      </div>
+      <div class="micro">Free forever. <b>Unsubscribe in one click</b> when you remember adulthood exists.</div>
+    </div>
+    <div class="stage" aria-hidden="true">
+      <div class="blob b1">🤡</div>
+      <div class="blob b2">💀</div>
+      <div class="blob b3">🛸</div>
+      <div class="blob b4">🥴</div>
+      <div class="center-card">
+        <div class="ttl">Today's Top Stupid</div>
+        <div class="meta">Issue #247 · 4 min read · 100% regret-free</div>
+      </div>
+      <div class="stamp">Certified Brain Rot</div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    EVERYTHING STUPID â€¢ EST. 2013 â€¢ A WEBSITE FOR DUMB SHIT â€¢ POST YOUR WORST IDEA â€¢ EVERYTHING STUPID â€¢ EST. 2013 â€¢ A WEBSITE FOR DUMB SHIT â€¢ POST YOUR WORST IDEA â€¢
+    <span><span class="pip"></span>cursed images</span>
+    <span><span class="pip"></span>unhinged tweets</span>
+    <span><span class="pip"></span>gas station finds</span>
+    <span><span class="pip"></span>infomercial flops</span>
+    <span><span class="pip"></span>AI screw-ups</span>
+    <span><span class="pip"></span>local news gold</span>
+    <span><span class="pip"></span>weird patents</span>
+    <span><span class="pip"></span>dumb headlines</span>
+    <span><span class="pip"></span>cursed images</span>
+    <span><span class="pip"></span>unhinged tweets</span>
+    <span><span class="pip"></span>gas station finds</span>
+    <span><span class="pip"></span>infomercial flops</span>
+    <span><span class="pip"></span>AI screw-ups</span>
+    <span><span class="pip"></span>local news gold</span>
+    <span><span class="pip"></span>weird patents</span>
+    <span><span class="pip"></span>dumb headlines</span>
   </div>
 </div>
 
-<header>
-  <h1>EVERYTHING <span class="red">STUPID</span></h1>
-  <p class="tagline">
-    A home for dumb thoughts, bad ideas, and things that didn't deserve to be on the internet â€” but are now.
-  </p>
-</header>
+<section id="what" class="wrap">
+  <div class="kicker">What you get</div>
+  <h2>A daily 4-minute hit of internet stupidity.</h2>
+  <p class="lede">No takes. No drama. No "5 lessons from this." Just the dumb stuff that makes you laugh out loud at your desk and feel slightly better about being human.</p>
 
-<main>
-  <section class="card">
-    <h2>ðŸŽ² Stupid Thought Generator</h2>
-    <div class="stupid-thought" id="thought">Click the button. I dare you.</div>
-    <button id="genBtn">Give me a stupid thought</button>
-  </section>
-
-  <section class="card">
-    <h2>ðŸ“Š The Stupid Stats</h2>
-    <div class="grid">
-      <div class="tile"><span class="num" id="stat1">0</span><span class="label">Stupid thoughts viewed</span></div>
-      <div class="tile"><span class="num">2013</span><span class="label">Year domain bought</span></div>
-      <div class="tile"><span class="num">âˆž</span><span class="label">Bad ideas remaining</span></div>
-      <div class="tile"><span class="num">0%</span><span class="label">Effort applied</span></div>
+  <div class="grid-3">
+    <div class="card">
+      <div class="icon">📰</div>
+      <h3>Headline of the Day</h3>
+      <p>The one local-news headline so dumb it loops back around to genius. Sourced fresh, hand-picked.</p>
+      <span class="tag">Daily</span>
     </div>
-  </section>
+    <div class="card">
+      <div class="icon">🖼️</div>
+      <h3>One Cursed Image</h3>
+      <p>You will not unsee it. You will text it to four friends. We accept zero responsibility.</p>
+      <span class="tag">Daily</span>
+    </div>
+    <div class="card">
+      <div class="icon">🤖</div>
+      <h3>AI Did A Stupid</h3>
+      <p>The funniest AI fails of the day — wrong recipes, hallucinated lawsuits, and Will Smith eating spaghetti.</p>
+      <span class="tag">Daily</span>
+    </div>
+    <div class="card">
+      <div class="icon">🎰</div>
+      <h3>Gas Station Find</h3>
+      <p>Unholy snacks, off-brand energy drinks, and merch that should not exist. Reader submissions encouraged.</p>
+      <span class="tag">Tue/Thu</span>
+    </div>
+    <div class="card">
+      <div class="icon">📺</div>
+      <h3>Infomercial Vault</h3>
+      <p>One forgotten 90s infomercial revisited per week. Your kitchen does not need this.</p>
+      <span class="tag">Friday</span>
+    </div>
+    <div class="card">
+      <div class="icon">📜</div>
+      <h3>Weirdest Patent</h3>
+      <p>Real US patents that should never have been filed, let alone approved. Includes diagrams.</p>
+      <span class="tag">Sunday</span>
+    </div>
+  </div>
+</section>
 
-  <section class="card">
-    <h2>ðŸ“® Submit Your Own</h2>
-    <p style="color:var(--muted);margin-top:0">Got something dumb to say? Don't keep it to yourself.</p>
-    <form id="submitForm">
-      <input type="text" id="name" placeholder="Your name (or 'anonymous coward')" />
-      <textarea id="thought-input" rows="3" placeholder="Drop your stupid thought here..."></textarea>
-      <button type="submit">Post the dumb thing</button>
+<section class="wrap">
+  <div class="strip">
+    <div>
+      <div class="kicker" style="color:var(--accent-2)">Reader Reviews*</div>
+      <h2>"I read it on the toilet. Every. Single. Day."</h2>
+      <p>That's the whole pitch. Five minutes. Free. Stupid. No newsletter has ever been more honest about what it is.</p>
+      <p style="font-size:12px;color:#ffffff70;margin-top:18px">*Reviews are real. Reviewers are also stupid.</p>
+    </div>
+    <div class="quote">
+      "I cancelled three Substacks to make room for this in my inbox. No regrets."
+      <div class="who">— A guy named Greg</div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="join">
+  <div class="signup">
+    <div class="kicker">Sign up</div>
+    <h2>One stupid email a day. That's it.</h2>
+    <p class="lede" style="margin:0 auto 4px">No spam. No upsells. No "premium tier." We don't even know what a sales funnel is.</p>
+    <form class="form" onsubmit="event.preventDefault();this.querySelector('button').textContent='You in 🤡';this.querySelector('input').value='';">
+      <input type="email" placeholder="you@inbox.com" required aria-label="Your email" />
+      <button type="submit">Make me dumber</button>
     </form>
-    <div class="submissions" id="submissions"></div>
-  </section>
-</main>
+    <div class="legal">By subscribing you agree to receive one daily email from Everything Stupid. Unsubscribe anytime.</div>
+  </div>
+</section>
 
 <footer>
-  everythingstupid.com â€” since 2013, kind of. <br/>
-  no ads. no tracking. no point.
+  <div>© <span id="yr"></span> everythingstupid.com — a PMAJ Labs joint. Made with regret.</div>
+  <div class="row">
+    <a href="#">Archive</a>
+    <a href="#">Submit a stupid</a>
+    <a href="#">Press (lol)</a>
+    <a href="#join">Subscribe</a>
+  </div>
 </footer>
 
-<script>
-const thoughts = [
-  "What if we taught crows to file taxes?",
-  "Pillows are just edible-looking soft prison cells for your face.",
-  "Every time you say 'literally', a thesaurus cries.",
-  "Dogs think you go on adventures every time you take out the trash.",
-  "A hot dog is a sandwich the same way a finger is a hand.",
-  "We're just bones wearing skin suits arguing about rectangles.",
-  "Birds were invented in 1986. The government calls them 'drones'.",
-  "Why do we park in driveways and drive on parkways?",
-  "If you replace 'W' with 'T' in 'What, Where, When', you get the answer.",
-  "The mirror has seen me at my worst and never said a word.",
-  "Cereal is just spicy soup if you think about it wrong enough.",
-  "Mondays are just Sundays in a bad mood.",
-  "Y'all ever wonder if your dog thinks your phone is a tiny boring person?",
-  "We named the planet 'Earth' even though 71% of it is water. Weird flex.",
-  "The plural of 'octopus' should just be 'a problem'.",
-  "Your brain came up with the word 'meeting' and now you have to go to one.",
-  "If trees scream when you cut them, paper is just compressed agony.",
-  "Adulthood is just walking around the kitchen looking for a snack you can't name.",
-  "There's a person out there using your toothbrush in a parallel universe and being WEIRD about it.",
-  "Why is it called rush hour when nobody moves?"
-];
-
-let viewCount = parseInt(localStorage.getItem('es_views') || '0');
-document.getElementById('stat1').textContent = viewCount;
-
-document.getElementById('genBtn').addEventListener('click', () => {
-  const t = thoughts[Math.floor(Math.random() * thoughts.length)];
-  const el = document.getElementById('thought');
-  el.style.opacity = 0;
-  setTimeout(() => {
-    el.textContent = t;
-    el.style.transition = 'opacity 0.25s';
-    el.style.opacity = 1;
-  }, 120);
-  viewCount++;
-  localStorage.setItem('es_views', viewCount);
-  document.getElementById('stat1').textContent = viewCount;
-});
-
-const submissionsEl = document.getElementById('submissions');
-const stored = JSON.parse(localStorage.getItem('es_submissions') || '[]');
-function renderSubs() {
-  submissionsEl.innerHTML = '';
-  stored.slice().reverse().forEach(s => {
-    const div = document.createElement('div');
-    div.className = 'submission';
-    div.innerHTML = '<strong style="color:var(--accent)">' + escapeHtml(s.name) + ':</strong> ' + escapeHtml(s.text);
-    submissionsEl.appendChild(div);
-  });
-}
-function escapeHtml(s){return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-renderSubs();
-
-document.getElementById('submitForm').addEventListener('submit', e => {
-  e.preventDefault();
-  const name = (document.getElementById('name').value || 'anonymous coward').trim();
-  const text = document.getElementById('thought-input').value.trim();
-  if (!text) return;
-  stored.push({name, text, ts: Date.now()});
-  localStorage.setItem('es_submissions', JSON.stringify(stored));
-  document.getElementById('thought-input').value = '';
-  renderSubs();
-});
-</script>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 </body>
 </html>
